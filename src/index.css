@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@700&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital,wght@1,400;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Playfair Display", serif;
+
+  --color-reaper-black: #09090b;
+  --color-reaper-dark: #18181b;
+  --color-reaper-gray: #27272a;
+  --color-accent-red: #dc2626;
+  --color-accent-bright: #ef4444;
+}
+
+@layer base {
+  body {
+    @apply bg-reaper-black text-zinc-100 font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-black tracking-tighter uppercase italic;
+  }
+}
+
+@layer components {
+  .editorial-border {
+    @apply border border-zinc-800 hover:border-accent-red/50 transition-colors duration-300;
+  }
+
+  .red-accent-dot {
+    @apply w-2 h-2 bg-accent-red rounded-full mr-2;
+  }
+
+  .editorial-meta {
+    @apply font-mono text-[10px] text-zinc-500 uppercase tracking-widest;
+  }
+
+  .editorial-tag {
+    @apply px-3 py-1 bg-accent-red text-[10px] font-black uppercase tracking-tighter text-white;
+  }
+}
